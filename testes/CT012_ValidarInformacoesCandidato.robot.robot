@@ -1,13 +1,19 @@
 *** Settings ***
-Library    SeleniumLibrary
-Resource    ../resources/variable.resource
+Library        SeleniumLibrary
+Resource       ../resources/variables/variable.resource
+Resource       ../resources/CT012_Validar_Candidato/keywords.robot
+Documentation   Esta suite testa o cadastro de Clientes
+Test Setup      Abrir o Navegador
+Test Teardown   Fechar o Navegador
 
 *** Test Cases ***
-CT012 - Validar preenchimento "Informações do Candidato" ao clicar em "Finalizar e Enviar"
-    [Documentation]    Teste para validar que todas as informações obrigatórias do candidato foram preenchidas antes do envio.
-    [Tags]             validacao    candidato    negativo    funcional
+CT002 - Validar criação de uma conta com Email já cadastrado
+    [Documentation]    Teste para validar erro ao tentar criar uma conta com um email já cadastrado.
+    [Tags]             cadastro    negativo    regressivo
 
-    Open Browser    ${URL}/informacoes_candidato    chrome
-    Click Button    id=finalizar_enviar
-    Page Should Contain    Campos obrigatórios não preenchidos
-    Close Browser
+    Acessar Tela de Login
+    Preencher Campo de E-mail
+    Preencher Campo de Senha
+    Confirmar Dados de Cadastro
+    Validar Tela de Clientes
+    Validar Informações do Candidato e Enviar

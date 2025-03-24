@@ -90,6 +90,25 @@ ${XPATH_MENSAGEM_ERRO}    A parte depois do "@" não deve conter o simbolo "@".
 ${XPATH_FINALIZAR}    //a[normalize-space()='Finalizar']
 ${XPATH_LOGOUT}       //button[normalize-space()='Logout']
 
+#RECUPERAR SENHA
+${XPATH_ESQUECI_MINHA_SENHA}   //a[normalize-space()='Esqueci minha senha']
+${XPATH_CAMPO_EMAIL}           //input[@id='floatingInput']
+${XPATH_BOTAO_ENVIAR}          //button[normalize-space()='Enviar']
+${EMAIL_TEXTO}                 challenge@primecontrol.com.br
+
+#VALIDAR CANDIDATO
+${XPATH_ENVIAR}              //button[normalize-space()='Enviar']
+${XPATH_NOME}                //input[@id='nome']
+${NOME}                      Bruna Rosa
+${XPATH_TELEFONE2}           //input[@id='telefone']
+${TELEFONE}                  41996446989
+${XPATH_EMAIL2}              //input[@id='email']
+${EMAIL}                     bruolirosa@gmail.com
+${XPATH_GITHUB}              //input[@id='githubLink']
+${GITHUB}                    https://github.com/BrunaOliveiraRosa/primecontrol
+${XPATH_RECRUTADOR}          //input[@id='nomeRecrutador']
+${RECRUTADOR}                Dionathan e Kely
+
 
 
 ${TIMEOUT}       10s
