@@ -2,6 +2,7 @@
 
 Library    SeleniumLibrary
 
+
 *** Variables ***
 
 #DADOS PAGINA PRIME
@@ -81,5 +82,14 @@ ${XPATH_BOTAO_SALVAR}     //button[normalize-space()='Salvar']
 
 #E-MAIL INVALIDO
 ${XPATH_MENSAGEM_ERRO}    A parte depois do "@" não deve conter o simbolo "@".
+
+#CAMPO OBRIGATORIO
+
+
+#LOGOUT
+${XPATH_FINALIZAR}    //a[normalize-space()='Finalizar']
+${XPATH_LOGOUT}       //button[normalize-space()='Logout']
+
+
 
 ${TIMEOUT}       10s

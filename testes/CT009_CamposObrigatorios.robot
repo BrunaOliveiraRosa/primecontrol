@@ -1,13 +1,36 @@
 *** Settings ***
-Library    SeleniumLibrary
-Resource    ../resources/variable.resource
+Library        SeleniumLibrary
+Resource       ../resources/variables/variable.resource
+Resource       ../resources/CT008_E-mail_Cadastro_NOK/keywords.robot
+Documentation   Esta suite testa o cadastro de Clientes
+Test Setup      Abrir o Navegador
+Test Teardown   Fechar o Navegador
+
+
 
 *** Test Cases ***
-CT009 - Validar preenchimento de campos obrigatórios na aba Perfil
-    [Documentation]    Teste para validar que os campos obrigatórios devem ser preenchidos antes do cadastro.
-    [Tags]             validacao    cliente    negativo    funcional
+CT005 - Realizar Cadastro de Clientes com sucesso
+    [Documentation]    Teste para cadastrar um novo cliente com sucesso na aba Perfil.
+    [Tags]             cadastro    positivo
 
-    Open Browser    ${URL}/perfil    chrome
-    Click Button    id=cadastrar_cliente
-    Page Should Contain    Campos obrigatórios não preenchidos
-    Close Browser
+    Acessar Tela de Login
+    Preencher Campo de E-mail
+    Preencher Campo de Senha
+    Confirmar Dados de Cadastro
+    Validar Tela de Clientes
+    Acessar Aba de Cadastro de Cliente
+    Preencher Nome Completo
+    Preencher Telefone
+    Preencher E-mail
+    Preencher CEP
+    Preencher Número da Residência
+    Preencher Endereço
+    Preencher Complemento
+    Adicionar Imagem
+    Swipe Para Baixo
+    Selecionar País
+    Selecionar Gênero
+    Selecionar Ferramentas
+    VerificarEAdicionarBotaoSalvar
+    Clicar em Salvar
+    Campos Obrigatórios

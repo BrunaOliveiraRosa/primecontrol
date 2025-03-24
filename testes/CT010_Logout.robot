@@ -1,13 +1,19 @@
 *** Settings ***
-Library    SeleniumLibrary
-Resource    ../resources/variable.resource
+Library        SeleniumLibrary
+Resource       ../resources/variables/variable.resource
+Resource       ../resources/CT010_Logout/keywords.robot
+Documentation   Esta suite testa o cadastro de Clientes
+Test Setup      Abrir o Navegador
+Test Teardown   Fechar o Navegador
 
 *** Test Cases ***
-CT010 - Realizar Logout com sucesso ao clicar em "Finalizar"
-    [Documentation]    Teste para validar que o usuário consegue sair do sistema corretamente.
-    [Tags]             logout    positivo    smoke
+CT002 - Validar criação de uma conta com Email já cadastrado
+    [Documentation]    Teste para validar erro ao tentar criar uma conta com um email já cadastrado.
+    [Tags]             cadastro    negativo    regressivo
 
-    Open Browser    ${URL}/dashboard    chrome
-    Click Button    id=finalizar
-    Page Should Contain    Você saiu do sistema
-    Close Browser
+    Acessar Tela de Login
+    Preencher Campo de E-mail
+    Preencher Campo de Senha
+    Confirmar Dados de Cadastro
+    Validar Tela de Clientes
+    Fazer Logout

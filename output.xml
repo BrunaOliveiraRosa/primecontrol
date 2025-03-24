@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2 (Python 3.13.1 on win32)" generated="2025-03-24T19:58:13.733688" rpa="false" schemaversion="5">
+<suite id="s1" name="CT010 Logout" source="D:\Bruna Rosa\Prime\Cadastro\WebTesting\testes\CT010_Logout.robot">
+<test id="s1-t1" name="CT002 - Validar criação de uma conta com Email já cadastrado" line="10">
+<kw name="Abrir o Navegador" owner="keywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-24T19:58:13.964767" level="INFO">Opening browser 'chrome' to base url 'https://challenge.primecontrol.com.br/'.</msg>
+<arg>${URL}</arg>
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-24T19:58:13.964515" elapsed="2.712304"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-03-24T19:58:16.677056" elapsed="0.048049"/>
+</kw>
+<doc>Abre o navegador e maximiza a janela.</doc>
+<status status="PASS" start="2025-03-24T19:58:13.963795" elapsed="2.761580"/>
+</kw>
+<kw name="Acessar Tela de Login" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${XPATH_FAZER_LOGIN}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-24T19:58:16.726970" elapsed="0.103010"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${XPATH_FAZER_LOGIN}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-03-24T19:58:16.830343" elapsed="0.047737"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-24T19:58:16.878509" level="INFO">Clicking element '//a[normalize-space()='Fazer Login']'.</msg>
+<arg>${XPATH_FAZER_LOGIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-24T19:58:16.878273" elapsed="0.819263"/>
+</kw>
+<doc>Clica no botão "Criar uma conta" para acessar a tela de cadastro.</doc>
+<status status="PASS" start="2025-03-24T19:58:16.726148" elapsed="0.971547"/>
+</kw>
+<kw name="Preencher Campo de E-mail" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${XPATH_ENTRADA_EMAIL}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-24T19:58:17.699138" elapsed="0.038178"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-24T19:58:17.737770" level="INFO">Typing text 'challenge@primecontrol.com.br' into text field '//input[@id='floatingInput']'.</msg>
+<arg>${XPATH_ENTRADA_EMAIL}</arg>
+<arg>${EMAIL_VALIDO}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-24T19:58:17.737511" elapsed="0.211671"/>
+</kw>
+<doc>Clica no campo de e-mail e insere o e-mail cadastrado.</doc>
+<status status="PASS" start="2025-03-24T19:58:17.698384" elapsed="0.250945"/>
+</kw>
+<kw name="Preencher Campo de Senha" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${XPATH_CAMPO_SENHA}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-24T19:58:17.950132" elapsed="0.030968"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-24T19:58:17.981539" level="INFO">Typing text '41933002024' into text field '//input[@id='floatingPassword']'.</msg>
+<arg>${XPATH_CAMPO_SENHA}</arg>
+<arg>${SENHA_VALIDO}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-24T19:58:17.981284" elapsed="0.108146"/>
+</kw>
+<doc>Clica no campo de e-mail e insere o e-mail cadastrado.</doc>
+<status status="PASS" start="2025-03-24T19:58:17.949756" elapsed="0.139792"/>
+</kw>
+<kw name="Confirmar Dados de Cadastro" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${XPATH_BOTAO_ACESSAR}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-24T19:58:18.090214" elapsed="0.026752"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-24T19:58:18.118024" level="INFO">Clicking element '//button[normalize-space()='Acessar']'.</msg>
+<arg>${XPATH_BOTAO_ACESSAR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-24T19:58:18.117548" elapsed="0.092302"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-24T19:58:28.210425" level="INFO">Slept 10 seconds.</msg>
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-24T19:58:18.210018" elapsed="10.000500"/>
+</kw>
+<doc>Preenche os campos de email e senha no formulário de cadastro.</doc>
+<status status="PASS" start="2025-03-24T19:58:18.089932" elapsed="10.120688"/>
+</kw>
+<kw name="Validar Tela de Clientes" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${XPATH_GESTAO_CLIENTES}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-24T19:58:28.211905" elapsed="0.031124"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-03-24T19:58:28.252794" level="INFO">Current page contains element '//h1[normalize-space()='Gestão de Clientes']'.</msg>
+<arg>${XPATH_GESTAO_CLIENTES}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-03-24T19:58:28.243200" elapsed="0.009681"/>
+</kw>
+<doc>Valida que a página "Gestão de Clientes" foi carregada corretamente após login.</doc>
+<status status="PASS" start="2025-03-24T19:58:28.211310" elapsed="0.041664"/>
+</kw>
+<kw name="Fazer Logout" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${XPATH_FINALIZAR}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-24T19:58:28.253783" elapsed="0.025725"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-24T19:58:28.279910" level="INFO">Clicking element '//a[normalize-space()='Finalizar']'.</msg>
+<arg>${XPATH_FINALIZAR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-24T19:58:28.279693" elapsed="0.103300"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-24T19:58:33.383626" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-24T19:58:28.383255" elapsed="5.000467"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${XPATH_LOGOUT}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-24T19:58:33.383869" elapsed="0.029056"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-24T19:58:33.413304" level="INFO">Clicking element '//button[normalize-space()='Logout']'.</msg>
+<arg>${XPATH_LOGOUT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-24T19:58:33.413101" elapsed="0.093232"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-24T19:58:38.508485" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-24T19:58:33.507238" elapsed="5.001350"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Logout realizado com sucesso.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-24T19:58:38.508743" elapsed="0.000561"/>
+</kw>
+<doc>Realiza logout clicando nos botões Finalizar e Logout.</doc>
+<status status="PASS" start="2025-03-24T19:58:28.253419" elapsed="10.256004"/>
+</kw>
+<kw name="Fechar o Navegador" owner="keywords" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-03-24T19:58:38.510324" elapsed="2.432155"/>
+</kw>
+<doc>Fecha o navegador.</doc>
+<status status="PASS" start="2025-03-24T19:58:38.510079" elapsed="2.432518"/>
+</kw>
+<doc>Teste para validar erro ao tentar criar uma conta com um email já cadastrado.</doc>
+<tag>cadastro</tag>
+<tag>negativo</tag>
+<tag>regressivo</tag>
+<status status="PASS" start="2025-03-24T19:58:13.962789" elapsed="26.980122"/>
+</test>
+<doc>Esta suite testa o cadastro de Clientes</doc>
+<status status="PASS" start="2025-03-24T19:58:13.736103" elapsed="27.208693"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">cadastro</stat>
+<stat pass="1" fail="0" skip="0">negativo</stat>
+<stat pass="1" fail="0" skip="0">regressivo</stat>
+</tag>
+<suite>
+<stat name="CT010 Logout" id="s1" pass="1" fail="0" skip="0">CT010 Logout</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
