@@ -46,26 +46,26 @@ Validar Tela de Clientes
 Validar Informações do Candidato e Enviar
     [Documentation]    Valida as informações do candidato e envia os dados preenchendo o formulário.
     Wait Until Element Is Visible    ${XPATH_FINALIZAR}    timeout=10s
-    Click Element    ${XPATH_FINALIZAR}    # Clica no botão "Finalizar"
+    Click Element    ${XPATH_FINALIZAR}    
     
     Wait Until Element Is Visible    ${XPATH_ENVIAR}    timeout=10s
-    Click Element    ${XPATH_ENVIAR}    # Clica no botão "Enviar"
+    Click Element    ${XPATH_ENVIAR}    
 
     # Preenche os campos com os dados fornecidos
     Wait Until Element Is Visible    ${XPATH_NOME}    timeout=10s
-    Input Text    ${XPATH_NOME}    ${NOME}    # Preenche o nome do candidato
+    Input Text    ${XPATH_NOME}    ${NOME}    
 
     Wait Until Element Is Visible    ${XPATH_TELEFONE2}    timeout=10s
-    Input Text    ${XPATH_TELEFONE2}    ${TELEFONE}    # Preenche o telefone do candidato
+    Input Text    ${XPATH_TELEFONE2}    ${TELEFONE}    
 
     Wait Until Element Is Visible    ${XPATH_EMAIL2}    timeout=10s
-    Input Text    ${XPATH_EMAIL2}    ${EMAIL}    # Preenche o e-mail do candidato
+    Input Text    ${XPATH_EMAIL2}    ${EMAIL}    
 
     Wait Until Element Is Visible    ${XPATH_GITHUB}    timeout=10s
-    Input Text    ${XPATH_GITHUB}    ${GITHUB}    # Preenche o link do GitHub
+    Input Text    ${XPATH_GITHUB}    ${GITHUB}    #
 
     Wait Until Element Is Visible    ${XPATH_RECRUTADOR}    timeout=10s
-    Input Text    ${XPATH_RECRUTADOR}    ${RECRUTADOR}    # Preenche o nome do recrutador
+    Input Text    ${XPATH_RECRUTADOR}    ${RECRUTADOR}    
     Sleep    5s
 
     Log To Console    Dados do candidato preenchidos e enviados com sucesso.
