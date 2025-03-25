@@ -82,6 +82,7 @@ ${XPATH_BOTAO_SALVAR}     //button[normalize-space()='Salvar']
 
 #E-MAIL INVALIDO
 ${XPATH_MENSAGEM_ERRO}    A parte depois do "@" não deve conter o simbolo "@".
+${MENSAGEM_ESPERADA}      A parte depois do "@" não deve conter o simbolo "@".
 
 #CAMPO OBRIGATORIO
 

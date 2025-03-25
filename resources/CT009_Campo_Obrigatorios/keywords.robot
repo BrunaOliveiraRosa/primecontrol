@@ -117,8 +117,8 @@ Clicar em Salvar
     [Documentation]    Clica no botão "Salvar" para finalizar o cadastro de cliente.
     Click Element    ${XPATH_SALVAR}
     Sleep    2s
-    
-Mostrar Mensagem E-mail Inválido
+      
+Campos Obrigatórios
     [Documentation]    Clica no botão "Salvar" e verifica se o alerta com a mensagem de erro é exibido.
     Click Element    ${XPATH_SALVAR}
     Sleep    2s   # Aguarda o alerta aparecer após clicar no botão "Salvar"

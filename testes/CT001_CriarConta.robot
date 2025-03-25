@@ -2,7 +2,6 @@
 Library        SeleniumLibrary
 Resource       ../resources/variables/variable.resource
 Resource       ../resources/CT001_Conta_Nova/keywords.robot
-Documentation   Esta suite testa o cadastro de Clientes
 Test Setup      Abrir o Navegador
 Test Teardown   Fechar o Navegador
 

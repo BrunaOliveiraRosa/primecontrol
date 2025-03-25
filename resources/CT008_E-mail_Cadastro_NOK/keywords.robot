@@ -120,13 +120,23 @@ Clicar em Salvar
     
 Mostrar Mensagem E-mail Inválido
     [Documentation]    Clica no botão "Salvar" e verifica se o alerta com a mensagem de erro é exibido.
-    Click Element    ${XPATH_SALVAR}
-    Sleep    2s   # Aguarda o alerta aparecer após clicar no botão "Salvar"
-    
-    # Verifica se o alerta está presente e depois lida com ele
-    Wait Until Keyword Succeeds    1x    2s    Handle Alert    action=accept   # Aceita o alerta
-    Log    O alerta foi aceito.
 
+    # Clica no botão "Salvar"
+    Click Element    ${XPATH_SALVAR}
+
+    # Captura o texto do alerta antes de aceitá-lo
+    ${alert_text}    Handle Alert    
+
+    # Exibe a mensagem capturada no log
+    Log    O texto do alerta é: ${alert_text}
+
+    # Verifica se a mensagem do alerta contém o esperado
+    Should Be Equal    ${alert_text}    ${MENSAGEM_ESPERADA}    Mensagem do alerta incorreta!
+
+    # Agora aceita o alerta
+    Handle Alert    action=accept
+
+    Log    O alerta foi aceito.
 
 
 
