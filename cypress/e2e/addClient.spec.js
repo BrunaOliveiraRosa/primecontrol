@@ -1,21 +1,21 @@
 describe('API Testes - /addCliente', () => {
-
+  
     // CT001 - Teste de adição bem-sucedida
     it('CT001 - Adição bem-sucedida de cliente', () => {
       cy.request({
         method: 'POST',
         url: '/addCliente',
         body: {
-          nome: 'Novo Cliente',
-          email: 'cliente@example.com',
-          fone: 123456789,
-          fotoPerfil: 'http://valid-url.com/image.jpg',
-          cep: '12345-678',
-          endereco: 'Rua Exemplo, 123',
-          complemento: 'Apto 101',
+          nome: 'Prime Control',
+          email: 'challenge@primecontrol.com.br',
+          fone: 41933002024,
+          fotoPerfil: 'https://media.licdn.com/dms/image/v2/C4E0BAQEcr5g6MbO-EA/company-logo_200_200/company-logo_200_200/0/1630645917795/prime_control_logo?e=2147483647&v=beta&t=PAb7B62TOouPGsiFtq_AhBhSeZzc6Y1Mh9u_86fHFwY',
+          cep: '80215-182',
+          endereco: 'Imaculada Conceição, 1430',
+          complemento: 'Predio',
           pais: 'Brasil',
           genero: 'Feminino',
-          ferramentas: ['Cypress']
+          ferramentas: ['Cypress', 'Python', 'Robot']
         }
       }).then((response) => {
         expect(response.status).to.eq(201);
@@ -25,45 +25,51 @@ describe('API Testes - /addCliente', () => {
     });
   
     // CT002 - Teste de campos obrigatórios
-    it('CT002 - Falta de campo obrigatório', () => {
+    it('CT002 - Teste de campos obrigatórios', () => {
       cy.request({
         method: 'POST',
         url: '/addCliente',
+        failOnStatusCode: false,  // Para permitir testar erro de validação
         body: {
-          email: 'cliente@example.com',
-          fone: 123456789
-          // Sem "nome"
-        },
-        failOnStatusCode: false
+          // Faltando o campo 'nome' (obrigatório)
+          email: 'challenge@primecontrol.com.br',
+          fone: 41933002024,
+          fotoPerfil: 'https://media.licdn.com/dms/image/v2/C4E0BAQEcr5g6MbO-EA/company-logo_200_200/company-logo_200_200/0/1630645917795/prime_control_logo?e=2147483647&v=beta&t=PAb7B62TOouPGsiFtq_AhBhSeZzc6Y1Mh9u_86fHFwY',
+          cep: '80215-182',
+          endereco: 'Imaculada Conceição, 1430',
+          complemento: 'Predio',
+          pais: 'Brasil',
+          genero: 'Feminino',
+          ferramentas: ['Cypress', 'Python', 'Robot']
+        }
       }).then((response) => {
-        expect(response.status).to.eq(400);
-        expect(response.body.message).to.include('Campo "nome" é obrigatório');
+        expect(response.status).to.eq(400);  // Espera um erro devido ao campo 'nome' ausente
+        expect(response.body.message).to.eq('Erro: campo "nome" é obrigatório');
       });
     });
   
     // CT003 - Teste de validação do e-mail e URL do perfil
-    it('CT003 - Validação do e-mail e URL', () => {
+    it('CT003 - Teste de validação de e-mail e URL', () => {
       cy.request({
         method: 'POST',
         url: '/addCliente',
+        failOnStatusCode: false,  // Para permitir testar erro de validação
         body: {
-          nome: 'Novo Cliente',
-          email: 'invalidemail',
-          fone: 123456789,
-          fotoPerfil: 'invalid-url',
-          cep: '12345-678',
-          endereco: 'Rua Exemplo, 123',
-          complemento: 'Apto 101',
+          nome: 'Prime Control',
+          email: 'invalid-email',  // E-mail inválido
+          fone: 41933002024,
+          fotoPerfil: 'invalid-url',  // URL inválida
+          cep: '80215-182',
+          endereco: 'Imaculada Conceição, 1430',
+          complemento: 'Predio',
           pais: 'Brasil',
-          genero: 'Masculino',
-          ferramentas: ['Cypress']
-        },
-        failOnStatusCode: false
+          genero: 'Feminino',
+          ferramentas: ['Cypress', 'Python', 'Robot']
+        }
       }).then((response) => {
-        expect(response.status).to.eq(400);
-        expect(response.body.message).to.include('Formato de e-mail inválido');
-        expect(response.body.message).to.include('URL de foto inválida');
+        expect(response.status).to.eq(400);  // Espera erro de validação
+        expect(response.body.message).to.eq('Erro: e-mail inválido ou URL do perfil inválida');
       });
     });
-  });
   
+  });
