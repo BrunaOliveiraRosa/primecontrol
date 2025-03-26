@@ -14,7 +14,7 @@ describe('API Testes - /addCliente', () => {
           endereco: 'Rua Exemplo, 123',
           complemento: 'Apto 101',
           pais: 'Brasil',
-          genero: 'Masculino',
+          genero: 'Feminino',
           ferramentas: ['Cypress']
         }
       }).then((response) => {
